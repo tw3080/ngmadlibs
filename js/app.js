@@ -1,6 +1,10 @@
+/*
+TODO: make gender female by default?
+*/
+
 angular.module('app', [])
     .controller('MadLibCtrl', function($scope) {
-        $scope.femaleName = '{{ female name }}';
+        $scope.personName = '{{ name }}';
         $scope.jobTitle = '{{ job title }}';
         $scope.tediousTask = '{{ tedious task }}';
         $scope.dirtyTask = '{{ dirty task }}';
@@ -9,4 +13,21 @@ angular.module('app', [])
         $scope.obnoxiousCelebrity = '{{ obnoxious celebrity }}';
         $scope.hugeNumber = '{{ huge number }}';
         $scope.adjective = '{{ adjective }}';
+        $scope.genderText = {
+            female: {
+                subjectPronoun: 'she',
+                objectPronoun: 'her',
+                possessivePronoun: 'her'
+            },
+            male: {
+                subjectPronoun: 'he',
+                objectPronoun: 'him',
+                possessivePronoun: 'his'
+            },
+            other: {
+                subjectPronoun: 'they',
+                objectPronoun: 'them',
+                possessivePronoun: 'their'
+            }
+        };
     });
