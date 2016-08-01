@@ -1,0 +1,54 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.mad-lib-header {
+    width: 45em;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-bottom: 0;
+    text-align: center;
+}
+
+.mad-lib-header:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mad-lib-smile {
+    padding: 10px 55px;
+    height: 115px;
+    float: left;
+    border-right: 1px solid black;
+}
+
+.header-text {
+    float: left;
+}
+
+.header-text h1 {
+    margin: 0 0 10px 0;
+    padding: 0 84px;
+    font-size: 3em;
+}
+
+.mad-lib-logo {
+    height: 55px;
+    margin: 8px 0 0 0;
+}
+
+.main-container {
+    margin: 0 auto;
+    width: 45em;
+    border: 1px solid black;
+}
+
+.input-container {
+    border-bottom: 1px solid black;
+}
+
+.input-container,
+.mad-lib-container {
+    padding: 20px 10%;
+}
