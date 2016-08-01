@@ -21,30 +21,36 @@
     <div class="main-container">
         <!-- Input field container -->
         <div class="input-container">
+            <div class="gender-selection">
+                <h2>Choose a gender:</h2>
+                <input type="radio" name="gender" checked/> Female
+                <input type="radio" name="gender" /> Male
+                <input type="radio" name="gender" /> Other
+            </div>
             <h2>Provide the following words:</h2>
-                <div class="col-1-3">
-                    <input type="text" ng-model="femaleName" placeholder="female name"/>
-                    <input type="text" ng-model="jobTitle" placeholder="job title"/>
-                    <input type="text" ng-model="tediousTask" placeholder="tedious task"/>
-                </div>
-                <div class="col-1-3">
-                    <input type="text" ng-model="dirtyTask" placeholder="dirty task"/>
-                    <input type="text" ng-model="celebrity" placeholder="celebrity"/>
-                    <input type="text" ng-model="uselessSkill" placeholder="useless skill"/>
-                </div>
-                <div class="col-1-3">
-                    <input type="text" ng-model="obnoxiousCelebrity" placeholder="obnoxious celebrity"/>
-                    <input type="text" ng-model="hugeNumber" placeholder="huge number"/>
-                    <input type="text" ng-model="adjective" placeholder="adjective"/>
-                </div>
+            <div class="col-1-3">
+                <input type="text" ng-model="personName" placeholder="name"/>
+                <input type="text" ng-model="jobTitle" placeholder="job title"/>
+                <input type="text" ng-model="tediousTask" placeholder="tedious task"/>
+            </div>
+            <div class="col-1-3">
+                <input type="text" ng-model="dirtyTask" placeholder="dirty task"/>
+                <input type="text" ng-model="celebrity" placeholder="celebrity"/>
+                <input type="text" ng-model="uselessSkill" placeholder="useless skill"/>
+            </div>
+            <div class="col-1-3">
+                <input type="text" ng-model="obnoxiousCelebrity" placeholder="obnoxious celebrity"/>
+                <input type="text" ng-model="hugeNumber" placeholder="huge number"/>
+                <input type="text" ng-model="adjective" placeholder="adjective"/>
+            </div>
         </div>
         <!-- MadLib container -->
         <div class="mad-lib-container">
             <p>
-                {{ femaleName }} was a {{ jobTitle }} who loved technology. Although she loved parts of her job, she absolutely hated {{ tediousTask }} and {{ dirtyTask }}. So, {{ femaleName }} met with her life mentor, {{ celebrity }}, who told her to learn how to {{ uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ uselessSkill }} so she studied programming instead.
+                {{ personName }} was a {{ jobTitle }} who loved technology. Although they loved parts of their job, they absolutely hated {{ tediousTask }} and {{ dirtyTask }}. So, {{ personName }} met with their life mentor, {{ celebrity }}, who told them to learn how to {{ uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ uselessSkill }}, so they studied programming instead.
             </p>
             <p>
-                What a great decision! With her new skills, {{ femaleName }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity }} which not only loved {{ dirtyTask }} but did it {{ hugeNumber }} times faster.
+                What a great decision! With their new skills, {{ personName }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity }} which not only loved {{ dirtyTask }} but did it {{ hugeNumber }} times faster.
             </p>
         </div>
     </div>
