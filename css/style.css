@@ -52,6 +52,7 @@ body {
 
 /* Input field styles */
 .input-container {
+    padding: 20px 10% 40px 10%;
     border-bottom: 1px solid black;
 }
 
@@ -62,8 +63,13 @@ body {
     clear: both;
 }
 
-.input-container {
-    padding: 20px 10% 40px 10%;
+/* Styles for gender selection radio buttons */
+.gender-selection {
+    text-align: center;
+}
+
+.gender-selection h2 {
+    text-align: left;
 }
 
 /* 1/3 width column for input field styling and placement */
