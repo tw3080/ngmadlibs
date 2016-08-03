@@ -72,6 +72,21 @@ body {
     text-align: left;
 }
 
+/* Requirement text */
+.required {
+    padding: 0 0 0 5px;    
+}
+
+.required,
+.error {
+    color: #D24648;
+}
+
+.error {
+    margin: 10px 10px 0 0;
+    float: right;
+}
+
 /* 1/3 width column for input field styling and placement */
 .col-1-3 {
     width: 33%;
@@ -86,6 +101,10 @@ body {
 }
 
 /* MadLib text and button container styles */
+.mad-lib-container {
+    border-bottom: 1px solid black;
+}
+
 .mad-lib-container,
 .mad-lib-btn-container {
     padding: 20px 10%;
