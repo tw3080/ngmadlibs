@@ -5,21 +5,36 @@ TODO: make gender other by default?
 angular.module('app', [])
     .controller('MainCtrl', function($scope) {
         var vm = this;
-        vm.personName = '';
-        vm.jobTitle = '';
-        vm.tediousTask = '';
-        vm.dirtyTask = '';
-        vm.celebrity = '';
-        vm.uselessSkill = '';
-        vm.obnoxiousCelebrity = '';
-        vm.hugeNumber = '';
-        vm.adjective = '';
-        vm.genderText = '';
-        vm.showMadLib = false;
+
+        /* TODO: Is making formData an empty object best practice?
+            Originally I had initialized each key-value pair to something
+            blank, but it seemed better to just dynamically create them
+            thru angular rather than initialize ALL of them?
+        */
+        vm.formData = {};
+        vm.genderText = {
+            /*
+            female: {
+                subjectPronoun: 'she',
+                objectPronoun: 'her',
+                possessivePronoun: 'her'
+            },
+            male: {
+                subjectPronoun: 'he',
+                objectPronoun: 'him',
+                possessivePronoun: 'his'
+            },
+            other: {
+                subjectPronoun: 'they',
+                objectPronoun: 'them',
+                possessivePronoun: 'their'
+            }
+            */
+        };
+
         vm.submit = function() {
             if ($scope.madLibForm.$valid) {
                 console.log('The form is valid');
-                // vm.showMadLib = true;
             } else {
                 console.log('The form is invalid');
             }
@@ -38,23 +53,5 @@ angular.module('app', [])
         */
 
         /* TODO: Not sure how to get it to switch between the pronouns
-
-        {
-            female: {
-                subjectPronoun: 'she',
-                objectPronoun: 'her',
-                possessivePronoun: 'her'
-            },
-            male: {
-                subjectPronoun: 'he',
-                objectPronoun: 'him',
-                possessivePronoun: 'his'
-            },
-            other: {
-                subjectPronoun: 'they',
-                objectPronoun: 'them',
-                possessivePronoun: 'their'
-            }
-        };
         */
 });
