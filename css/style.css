@@ -85,7 +85,28 @@ body {
     border: 1px solid black;
 }
 
-/* MadLib text container styles */
-.mad-lib-container {
+/* MadLib text and button container styles */
+.mad-lib-container,
+.mad-lib-btn-container {
     padding: 20px 10%;
+}
+
+/* Clearfix for floated submit button */
+.mad-lib-btn-container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mad-lib-btn {
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    box-shadow: 3px 3px 0 black;
+    background-color: white;
+}
+
+.mad-lib-btn:focus {
+    outline: 0;
 }
