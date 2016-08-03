@@ -5,20 +5,21 @@ TODO: make gender other by default?
 angular.module('app', [])
     .controller('MainCtrl', function($scope) {
         var vm = this;
-        vm.personName = '{{ name }}';
-        vm.jobTitle = '{{ job title }}';
-        vm.tediousTask = '{{ tedious task }}';
-        vm.dirtyTask = '{{ dirty task }}';
-        vm.celebrity = '{{ celebrity }}';
-        vm.uselessSkill = '{{ useless skill }}';
-        vm.obnoxiousCelebrity = '{{ obnoxious celebrity }}';
-        vm.hugeNumber = '{{ huge number }}';
-        vm.adjective = '{{ adjective }}';
+        vm.personName = '';
+        vm.jobTitle = '';
+        vm.tediousTask = '';
+        vm.dirtyTask = '';
+        vm.celebrity = '';
+        vm.uselessSkill = '';
+        vm.obnoxiousCelebrity = '';
+        vm.hugeNumber = '';
+        vm.adjective = '';
         vm.genderText = '';
         vm.showMadLib = false;
         vm.submit = function() {
             if ($scope.madLibForm.$valid) {
                 console.log('The form is valid');
+                // vm.showMadLib = true;
             } else {
                 console.log('The form is invalid');
             }
@@ -26,6 +27,7 @@ angular.module('app', [])
 
         /* TODO: DIDN'T WORK; why? Had to replace vm with $scope,
         and add $scope as a parameter of the controller
+
         vm.submit = function() {
             if (vm.madLibForm.$valid) {
                 console.log('The form is valid');
@@ -35,7 +37,9 @@ angular.module('app', [])
         };
         */
 
-        /*{
+        /* TODO: Not sure how to get it to switch between the pronouns
+
+        {
             female: {
                 subjectPronoun: 'she',
                 objectPronoun: 'her',

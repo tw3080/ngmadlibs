@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-1-3">
                         <input type="text" ng-model="vm.obnoxiousCelebrity" required placeholder="obnoxious celebrity"/>
-                        <input type="text" ng-model="vm.hugeNumber" required placeholder="huge number"/>
+                        <input type="text" ng-model="vm.hugeNumber" required ng-pattern="/^\d+$/" placeholder="huge number"/>
                         <input type="text" ng-model="vm.adjective" required placeholder="adjective"/>
                     </div>
             </div>
