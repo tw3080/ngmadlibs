@@ -18,7 +18,7 @@ body {
     clear: both;
 }
 
-/* Smile image logo styles */
+/* Smile logo image */
 .mad-lib-smile {
     padding: 10px 55px;
     height: 115px;
@@ -37,7 +37,7 @@ body {
     font-size: 3em;
 }
 
-/* 'ngMadLibs' logo image styles */
+/* 'ngMadLibs' logo image */
 .mad-lib-logo {
     height: 55px;
     margin: 8px 0 0 0;
@@ -72,9 +72,9 @@ body {
     text-align: left;
 }
 
-/* Requirement text */
+/* Requirement/error text */
 .required {
-    padding: 0 0 0 5px;    
+    padding: 0 0 0 5px;
 }
 
 .required,
