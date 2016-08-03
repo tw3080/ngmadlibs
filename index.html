@@ -19,17 +19,20 @@
     </header>
     <!-- Main content -->
     <div class="main-container">
+        <!-- Form for mad lib inputs -->
         <form name="madLibForm" novalidate ng-submit="vm.submit()" autocomplete="false">
             <!-- Input field container -->
             <!-- TODO: This feels like a messy solution to the gender selection,
             especially the ng-init part? -->
             <div class="input-container" ng-hide="vm.showMadLib" ng-init="vm.genderText = 'female'; genderText.subjectPronoun = 'she'; genderText.objectPronoun = 'her'; genderText.possessivePronoun = 'her'">
+                <!-- Gender selection -->
                 <div class="gender-selection">
                     <h2>Choose a gender:</h2>
                     <input type="radio" name="gender" value="female" ng-model="vm.genderText" ng-click="genderText.subjectPronoun = 'she'; genderText.objectPronoun = 'her'; genderText.possessivePronoun = 'her'" /> Female
                     <input type="radio" name="gender" value="male" ng-model="vm.genderText" ng-click="genderText.subjectPronoun = 'he'; genderText.objectPronoun = 'him'; genderText.possessivePronoun = 'his'"/> Male
                     <input type="radio" name="gender" value="other" ng-model="vm.genderText" ng-click="genderText.subjectPronoun = 'they'; genderText.objectPronoun = 'them'; genderText.possessivePronoun = 'their'"/> Other
                 </div>
+                <!-- Text input -->
                 <h2>Provide the following words:</h2>
                 <p class="required">
                     All fields are required.
@@ -66,6 +69,7 @@
                     'Huge number' must be a numeric value!
                 </p>
             </div>
+            <!-- 'Start Over' button -->
             <div class="mad-lib-btn-container" ng-show="vm.showMadLib">
                 <!-- TODO: Should this button be a regular button rather than a submit input since the user isn't submitting anything here? -->
                 <button id="start-over-btn" type="button" class="mad-lib-btn" ng-click="vm.resetForm()">Start Over</button>
