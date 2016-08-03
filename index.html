@@ -20,12 +20,12 @@
     <!-- Main content -->
     <div class="main-container">
         <!-- Input field container -->
-        <div class="input-container">
+        <div class="input-container" ng-show="!showMadLib">
             <div class="gender-selection">
                 <h2>Choose a gender:</h2>
-                <input type="radio" name="gender" checked/> Female
-                <input type="radio" name="gender" /> Male
-                <input type="radio" name="gender" /> Other
+                <input type="radio" name="gender" ng-model="vm.genderText" value="she" checked /> Female
+                <input type="radio" name="gender" ng-model="vm.genderText" value="he" /> Male
+                <input type="radio" name="gender" ng-model="vm.genderText" value="they" /> Other
             </div>
             <h2>Provide the following words:</h2>
             <div class="col-1-3">
@@ -45,13 +45,19 @@
             </div>
         </div>
         <!-- MadLib container -->
-        <div class="mad-lib-container">
+        <div class="mad-lib-container" ng-show="showMadLib">
             <p>
-                {{ vm.personName }} was a {{ vm.jobTitle }} who loved technology. Although they loved parts of their job, they absolutely hated {{ vm.tediousTask }} and {{ vm.dirtyTask }}. So, {{ vm.personName }} met with their life mentor, {{ vm.celebrity }}, who told them to learn how to {{ vm.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ vm.uselessSkill }}, so they studied programming instead.
+                {{ vm.personName }} was a {{ vm.jobTitle }} who loved technology. Although {{ vm.genderText }} loved parts of their job, {{ vm.genderText }} absolutely hated {{ vm.tediousTask }} and {{ vm.dirtyTask }}. So, {{ vm.personName }} met with their life mentor, {{ vm.celebrity }}, who told them to learn how to {{ vm.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ vm.uselessSkill }}, so {{ vm.genderText }} studied programming instead.
             </p>
             <p>
                 What a great decision! With their new skills, {{ vm.personName }} built a(n) {{ vm.adjective }} robot named {{ vm.obnoxiousCelebrity }} which not only loved {{ vm.dirtyTask }} but did it {{ vm.hugeNumber }} times faster.
             </p>
+            <div class="mad-lib-btn-container">
+                <input type="submit" class="mad-lib-btn" ng-click="showMadLib = !showMadLib" value="Start Over"/>
+            </div>
+        </div>
+        <div class="mad-lib-btn-container" ng-show="!showMadLib">
+            <input type="submit" class="mad-lib-btn" ng-click="showMadLib = !showMadLib" value="Generate My Mad Lib"/>
         </div>
     </div>
     <script src="js/app.js"></script>
