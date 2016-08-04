@@ -25,12 +25,14 @@ angular.module('app', []).controller('MainCtrl', function($scope) {
         };
 
         vm.showMadLib = false;
+        vm.formIncomplete = false;
 
         vm.submit = function() {
             if ($scope.madLibForm.$valid) {
                 vm.showMadLib = true;
             } else {
                 console.log('The form is invalid');
+                vm.formIncomplete = true;
             }
             /* TODO: DIDN'T WORK; why? Had to replace vm with $scope,
             and add $scope as a parameter of the controller itself
@@ -48,6 +50,7 @@ angular.module('app', []).controller('MainCtrl', function($scope) {
         // Resets scope variables and returns form to pristine state
         vm.resetForm = function() {
             vm.showMadLib = false;
+            vm.formIncomplete = false;
             vm.formData = {};
             /* TODO: How do I reset the gender radio buttons to default back to female? Resetting genderText to anything just causes all the radio buttons to be unchecked */
             /*
