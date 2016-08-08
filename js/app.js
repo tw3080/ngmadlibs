@@ -1,65 +1,35 @@
-angular.module('app', []).controller('MainCtrl', function($scope) {
-        var vm = this;
+angular.module('app', ['ngAnimate']).controller('MainCtrl', function($scope) {
+    var vm = this;
 
-        /* TODO: Is making formData/genderText an empty object best practice? Originally I had initialized each key-value pair to something blank, but it seemed better to just dynamically create them thru angular rather than initialize ALL of them?
-        */
-        vm.formData = {};
-        vm.genderText = {
-            /*
-            female: {
-                subjectPronoun: 'she',
-                objectPronoun: 'her',
-                possessivePronoun: 'her'
-            },
-            male: {
-                subjectPronoun: 'he',
-                objectPronoun: 'him',
-                possessivePronoun: 'his'
-            },
-            other: {
-                subjectPronoun: 'they',
-                objectPronoun: 'them',
-                possessivePronoun: 'their'
-            }
-            */
-        };
+    // Form data from user input
+    vm.formData = {};
+    vm.genderText = {};
 
+    // If true, mad lib will show; if false, it's hidden
+    vm.showMadLib = false;
+    // Display error message if true; if false, form is submitted
+    vm.formIncomplete = false;
+
+    // Submit form
+    vm.submit = function() {
+        // If the form is valid, show the mad lib
+        if ($scope.madLibForm.$valid) {
+            vm.showMadLib = true;
+        // Else, display error message
+        } else {
+            vm.formIncomplete = true;
+        }
+    };
+
+    // Resets scope variables and returns form to pristine state
+    vm.resetForm = function() {
         vm.showMadLib = false;
         vm.formIncomplete = false;
-
-        vm.submit = function() {
-            if ($scope.madLibForm.$valid) {
-                vm.showMadLib = true;
-            } else {
-                console.log('The form is invalid');
-                vm.formIncomplete = true;
-            }
-            /* TODO: DIDN'T WORK; why? Had to replace vm with $scope,
-            and add $scope as a parameter of the controller itself
-
-            vm.submit = function() {
-                if (vm.madLibForm.$valid) {
-                    console.log('The form is valid');
-                } else {
-                    console.log('The form is invalid');
-                }
-            };
-            */
-        };
-
-        // Resets scope variables and returns form to pristine state
-        vm.resetForm = function() {
-            vm.showMadLib = false;
-            vm.formIncomplete = false;
-            vm.formData = {};
-            /* TODO: How do I reset the gender radio buttons to default back to female? Resetting genderText to anything just causes all the radio buttons to be unchecked */
-            /*
-            vm.genderText = {};
-            vm.genderText = 'female';
-            vm.genderText.subjectPronoun = 'she';
-            vm.genderText.objectPronoun = 'her';
-            vm.genderText.possessivePronoun = 'her';
-            */
-            $scope.madLibForm.$setPristine();
-        };
+        vm.formData = {};
+        vm.genderText = 'female';
+        $scope.genderText.subjectPronoun = 'she';
+        $scope.genderText.objectPronoun = 'her';
+        $scope.genderText.possessivePronoun = 'her';
+        $scope.madLibForm.$setPristine();
+    };
 });
