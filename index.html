@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
 </head>
 <body ng-controller="MainCtrl as vm">
     <!-- Header -->
@@ -22,8 +23,6 @@
         <!-- Form for mad lib inputs -->
         <form name="madLibForm" novalidate ng-submit="vm.submit()" autocomplete="false">
             <!-- Input field container -->
-            <!-- TODO: This feels like a messy solution to the gender selection,
-            especially the ng-init part? -->
             <div class="input-container" ng-hide="vm.showMadLib" ng-init="vm.genderText = 'female'; genderText.subjectPronoun = 'she'; genderText.objectPronoun = 'her'; genderText.possessivePronoun = 'her'">
                 <!-- Gender selection -->
                 <div class="gender-selection">
@@ -38,7 +37,7 @@
                     All fields are required.
                 </p>
                 <div class="col-1-3">
-                    <input type="text" name="name" ng-model="vm.formData.personName" required placeholder="name"/>
+                    <input type="text" ng-model="vm.formData.personName" required placeholder="name"/>
                     <input type="text" ng-model="vm.formData.jobTitle" required placeholder="job title"/>
                     <input type="text" ng-model="vm.formData.tediousTask" required placeholder="tedious task"/>
                 </div>
@@ -49,7 +48,7 @@
                 </div>
                 <div class="col-1-3">
                     <input type="text" ng-model="vm.formData.obnoxiousCelebrity" required placeholder="obnoxious celebrity"/>
-                    <input type="text" name="hugeNumber" ng-model="vm.formData.hugeNumber" required ng-pattern="/^\d+$/" placeholder="huge number"/>
+                    <input type="number" name="hugeNumber" ng-model="vm.formData.hugeNumber" required ng-pattern="/^\d+$/" placeholder="huge number"/>
                     <input type="text" ng-model="vm.formData.adjective" required placeholder="adjective"/>
                 </div>
             </div>
@@ -74,7 +73,6 @@
             </div>
             <!-- 'Start Over' button -->
             <div class="mad-lib-btn-container" ng-show="vm.showMadLib">
-                <!-- TODO: Should this button be a regular button rather than a submit input since the user isn't submitting anything here? -->
                 <button id="start-over-btn" type="button" class="mad-lib-btn" ng-click="vm.resetForm()">Start Over</button>
             </div>
         </form>
